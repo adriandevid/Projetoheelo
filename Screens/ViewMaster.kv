@@ -1,0 +1,563 @@
+ScreenManager:
+    Screen:
+        name: "WindowInital"
+        canvas.before:
+            Color:
+                rgba: app.theme_cls.primary_color
+            RoundedRectangle:
+                radius: [0]
+                size: self.size
+                pos: self.x, self.y
+        BoxLayout:
+            orientation: "vertical"
+            padding: "3dp"
+            size_hint: 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            AsyncImage:
+                source: 'C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/pandemia.png'
+                size_hint: 1,1
+                pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+            BoxLayout:
+                id: boxofexibision
+                orientation: 'vertical'
+                size_hint: .3, .3
+                spacing: 5
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                FloatLayout:
+                    Label:
+                        text: "ola esse é o heeloapp serve para verificar"
+                        halign: "center"
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+                    Label:
+                        text: "se você possui sintomas da COVID-19"
+                        halign: "center"
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+                    MDRoundFlatIconButton:
+                        text: 'Começar'
+                        icon: "power-standby"
+                        md_bg_color: 1,1,1,1
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+                        on_release: root.current = 'Window1'
+    Screen:
+        name: "Window1"
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                padding: "5dp"
+                spacing: 10
+                MDCard:
+                    orientation: "vertical"
+                    padding: "50dp"
+                    size_hint: None, None
+                    size: 300, 400
+                    elevation: 10
+                    radius: [70]
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    canvas.before:
+                        Color:
+                            rgba:  [1,1,1,1]
+                        RoundedRectangle:
+                            radius: [30]
+                            size: 300, 450
+                            pos: self.x, self.y - 24
+                    FloatLayout:
+                        Image:
+                            source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/smartphone.png"
+                            halign: "center"
+                            size_hint_y: .5
+                            size: 50, 50
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+                        MDLabel:
+                            text: "Conectividade"
+                            font_style: "Button"
+                            halign: "center"
+                            heigth: 50
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                        MDLabel:
+                            text: "É preciso está conectado a uma rede estavel para fazer o login no app, bem como cadastrar e satisfazer as respostas do questionario e submeter."       
+                            font_style: "Caption"
+                            halign: "center"
+                            heigth: 50
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint: None, None
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size: 400, 100
+                    padding: "10dp"
+                    spacing: 20
+                    MDFillRoundFlatIconButton:
+                        text: 'Continuar'
+                        icon: 'code-greater-than'
+                        size_hint_x: .7
+                        md_bg_color: app.theme_cls.primary_color
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                        on_release: root.current = 'Window2'
+    Screen:
+        name: "Window2"
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                padding: "10dp"
+                spacing: 10
+                MDCard:
+                    orientation: "vertical"
+                    padding: "50dp"
+                    size_hint: None, None
+                    size: 300, 400
+                    elevation: 10
+                    radius: [70]
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    canvas.before:
+                        Color:
+                            rgba:  [1,1,1,1]
+                        RoundedRectangle:
+                            radius: [30]
+                            size: 300, 450
+                            pos: self.x, self.y - 24
+                    FloatLayout:
+                        Image:
+                            source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/proprietario.png"
+                            halign: "center"
+                            size_hint_y: .5
+                            size: 50, 50
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+                        MDLabel:
+                            text: "Conectividade"
+                            font_style: "Button"
+                            halign: "center"
+                            heigth: 50
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                        MDLabel:
+                            text: "É preciso está conectado a uma rede estavel para fazer o login no app, bem como cadastrar e satisfazer as respostas do questionario e submeter."       
+                            font_style: "Caption"
+                            halign: "center"
+                            heigth: 50
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint: None, None
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size: 400, 100
+                    padding: "10dp"
+                    spacing: 20
+                    MDFillRoundFlatIconButton:
+                        text: 'Continuar'
+                        icon: 'code-greater-than'
+                        size_hint_x: .7
+                        md_bg_color: app.theme_cls.primary_color
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                        on_release: root.current = 'Window3'
+    Screen:
+        name: "Window3"
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                padding: "10dp"
+                spacing: 10
+                MDCard:
+                    orientation: "vertical"
+                    padding: "50dp"
+                    size_hint: None, None
+                    size: 300, 400
+                    elevation: 10
+                    radius: [70]
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    canvas.before:
+                        Color:
+                            rgba:  [1,1,1,1]
+                        RoundedRectangle:
+                            radius: [30]
+                            size: 300, 450
+                            pos: self.x, self.y - 24
+                    FloatLayout:
+                        Image:
+                            source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/interface-de-usuario.png"
+                            halign: "center"
+                            size_hint_y: .5
+                            size: 50, 50
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+                        MDLabel:
+                            text: "Conectividade"
+                            font_style: "Button"
+                            halign: "center"
+                            heigth: 50
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                        MDLabel:
+                            text: "É preciso está conectado a uma rede estavel para fazer o login no app, bem como cadastrar e satisfazer as respostas do questionario e submeter."       
+                            font_style: "Caption"
+                            halign: "center"
+                            heigth: 50
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint: None, None
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size: 400, 100
+                    padding: "10dp"
+                    spacing: 20
+                    MDFillRoundFlatIconButton:
+                        text: 'Continuar'
+                        icon: 'code-greater-than'
+                        size_hint_x: .7
+                        md_bg_color: app.theme_cls.primary_color
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                        on_release: root.current = 'WindowofLoginorRegister'
+    WindowOfLogin:
+        name: "WindowofLoginorRegister"
+    WindowOfQuiz:
+        name: "WindowQuiz"
+        
+<WindowOfLogin>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: "5dp"
+        size_hint: None, None
+        size: 300, 500
+        elevation: 30
+        radius: [70]
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        canvas:
+            Color:
+                rgba: app.theme_cls.primary_color
+            Ellipse:
+                size: 150, 150
+                pos: self.x + 75, self.y + 400
+                source: 'C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/do-utilizador.png'
+        FloatLayout:
+            MDTextField:
+                hint_text: "E-mail"
+                helper_text: "Digite o e-mail comforme o cadastrado ex:. exemplo@exemplo.com"
+                helper_text_mode: "on_focus"
+                color_mode: "custom"
+                fill_color: 0,0,0,1
+                pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            MDTextField:
+                hint_text: "Password"
+                helper_text: ""
+                password: True
+                helper_text_mode: "on_focus"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.482}
+            MDLabel:
+                text: "Esqueçeu a senha? click"
+                theme_text_color: "Custom"
+                text_color: 0.12,0.54,0.84,0.5
+                font_size: 11
+                pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            MDTextButton:
+                text: "aqui"
+                custom_color: 0.12,0.54,0.84,0.9
+                pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            MDRoundFlatIconButton:
+                text: '                        Entrar'
+                icon: 'account-check'
+                size_hint_x: .9
+                pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+                on_release: app.root.current = 'WindowQuiz'
+            MDFillRoundFlatIconButton:
+                text: 'cadastrar'
+                icon: 'account-plus'
+                size_hint_x: .9
+                md_bg_color: app.theme_cls.primary_color
+                pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                on_release: app.root.current = 'WindowQuiz'
+<WindowOfQuiz>:
+    BoxLayout:
+        orientation: "vertical"
+        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        size: root.width, root.height + 500
+        ScrollView:
+            BoxLayout:
+            	orientation: "vertical"
+                spacing: 7
+                padding: "10dp"
+            	size_hint: None, None
+                size: root.width, root.height + 900
+                pos_hint: {'center_x': 0.5, 'center_y': .5}
+            	MDCard:
+                    orientation: 'vertical'
+                    size_hint: .9, .7
+                    size: 300, 500
+                    spacing: 7
+                    radius: [70]
+                    elevation: 10
+            	    padding_top: 50
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                    Image:
+                    	source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/febre.png"
+                        halign: "center"
+                        size_hint: 1, 1
+                        size: 200, 250
+                    	pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+                    MDLabel:
+                        text: "Você está com febre?"
+                        halign: "center"
+                	FloatLayout:
+                        MDFillRoundFlatIconButton:
+                            text: 'Sim'
+                            icon: 'check'
+							md_bg_color: 0,1,0,0.5
+                            pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+                        	on_release: root.current = 'WindowQuiz'
+                    	MDFillRoundFlatIconButton:
+                            text: 'Não'
+                            icon: 'close'
+                            md_bg_color: 1,0,0,1
+                            pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+                            on_release: root.current = 'WindowQuiz'
+				MDCard:
+                	orientation: 'vertical'
+                    size_hint: .9, .7
+                    size: 300, 500
+                    spacing: 7
+					radius: [70]
+                    elevation: 10
+                    padding_top: 50
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+                    Image:
+                    	source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/coriza.png"
+                        halign: "center"
+                    	size_hint: 1, 1
+                        size: 200, 200
+						pos_hint: {'center_x': 0.5, 'center_y': 0.7}            
+                	MDLabel:
+                    	text: "Você está com coriza?"
+                        halign: "center"
+                    FloatLayout:
+                        MDFillRoundFlatIconButton:
+                        	text: 'Sim'
+                            icon: 'check'
+                            md_bg_color: 0,1,0,0.5
+                            pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+                            on_release: root.current = 'WindowQuiz'
+                        MDFillRoundFlatIconButton:
+                            text: 'Não'
+                            icon: 'close'
+                            md_bg_color: 1,0,0,1
+                            pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+                            on_release: root.current = 'WindowQuiz'
+                MDCard:
+                    orientation: 'vertical'
+                    size_hint: .9, .7
+                    size: 300, 300
+                    spacing: 7
+                    radius: [70]
+                    elevation: 10
+                    padding_top: 50
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+                    Image:
+						source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/tosse.png"
+                        halign: "center"
+						size_hint: 1, 1
+                    	size: 200, 200
+                    	pos_hint: {'center_x': 0.5, 'center_y': 0.7}      
+					MDLabel:
+                        text: "Você está com tosse?"
+                        halign: "center"
+                    FloatLayout:
+                        MDFillRoundFlatIconButton:
+                            text: 'Sim'
+                            icon: 'check'
+                            md_bg_color: 0,1,0,0.5
+            	        	pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+                            on_release: root.current = 'WindowQuiz'
+                        MDFillRoundFlatIconButton:
+                            text: 'Não'
+                            icon: 'close'
+                            md_bg_color: 1,0,0,1
+                            pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+                            on_release: root.current = 'WindowQuiz'
+				MDCard:
+                    orientation: 'vertical'
+                    size_hint: .9, .7
+					size: 300, 300
+					spacing: 7
+                    radius: [70]
+                    elevation: 10
+                    padding_top: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+					Image:
+						source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/dores.png"
+						halign: "center"
+						size_hint: 1, 1
+						size: 200, 200
+						pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+					MDLabel:
+                        text: "Você está com dor no corpo?"
+                        halign: "center"
+					FloatLayout:
+						MDFillRoundFlatIconButton:
+							text: 'Sim'
+							icon: 'check'
+							md_bg_color: 0,1,0,0.5
+							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+						MDFillRoundFlatIconButton:
+							text: 'Não'
+							icon: 'close'
+							md_bg_color: 1,0,0,1
+							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+                MDCard:
+					orientation: 'vertical'
+					size_hint: .9, .7
+					size: 300, 300
+					spacing: 7
+					radius: [70]
+					elevation: 10
+					padding_top: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+					Image:
+						source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/corpo-mole.png"
+						halign: "center"
+						size_hint: 1, 1
+						size: 200, 200
+						pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+                    MDLabel:
+						text: "Você está com corpo mole ou fraqueza?"
+						halign: "center"
+                    FloatLayout:
+						MDFillRoundFlatIconButton:
+							text: 'Sim'
+							icon: 'check'
+							md_bg_color: 0,1,0,0.5
+							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+						MDFillRoundFlatIconButton:
+							text: 'Não'
+							icon: 'close'
+							md_bg_color: 1,0,0,1
+							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+				MDCard:
+					orientation: 'vertical'
+					size_hint: .9, .7
+					size: 300, 300
+					spacing: 7
+					radius: [70]
+					elevation: 10
+					padding_top: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+					Image:
+						source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/dor-de-garganta.png"
+						halign: "center"
+						size_hint: 1, 1
+						size: 200, 200
+						pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+					MDLabel:
+						text: "Você está com dor na garganta?"
+						halign: "center"
+					FloatLayout:
+						MDFillRoundFlatIconButton:
+							text: 'Sim'
+							icon: 'check'
+							md_bg_color: 0,1,0,0.5
+							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+						MDFillRoundFlatIconButton:
+							text: 'Não'
+							icon: 'close'
+							md_bg_color: 1,0,0,1
+							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+				MDCard:
+					orientation: 'vertical'
+					size_hint: .9, .7
+					size: 300, 300
+					spacing: 7
+					radius: [70]
+					elevation: 10
+					padding_top: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+					Image:
+						source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/diarreia.png"
+						halign: "center"
+						size_hint: 1, 1
+						size: 200, 200
+						pos_hint: {'center_x': 0.5, 'center_y': 0.7}	
+					MDLabel:
+						text: "Você está com enjoo ou vômito ou diarreia?"
+						halign: "center"
+					FloatLayout:
+						MDFillRoundFlatIconButton:
+							text: 'Sim'
+							icon: 'check'
+							md_bg_color: 0,1,0,0.5
+							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+						MDFillRoundFlatIconButton:
+							text: 'Não'
+							icon: 'close'
+							md_bg_color: 1,0,0,1
+							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+				MDCard:
+					orientation: 'vertical'
+					size_hint: .9, .7
+					size: 300, 300
+					spacing: 7
+					radius: [70]
+					elevation: 10
+					padding_top: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+					Image:
+						source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/dificuldade-ao-respirar.png"
+						halign: "center"
+						size_hint: 1, 1
+						size: 200, 200
+						pos_hint: {'center_x': 0.5, 'center_y': 0.7}		
+					MDLabel:
+						text: "Você está com dificuldade de resspirar/falta de ar?"
+						halign: "center"
+					FloatLayout:
+						MDFillRoundFlatIconButton:
+							text: 'Sim'
+							icon: 'check'
+							md_bg_color: 0,1,0,0.5
+							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+						MDFillRoundFlatIconButton:
+							text: 'Não'
+							icon: 'close'
+							md_bg_color: 1,0,0,1
+							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+				MDCard:
+					orientation: 'vertical'
+					size_hint: .9, .7
+					size: 300, 300
+					spacing: 7
+					radius: [70]
+					elevation: 10
+					padding_top: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 1}
+					Image:
+						source: "C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/perdast.png"
+						halign: "center"
+						size_hint: 1, 1
+						size: 200, 200
+						pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+					MDLabel:
+						text: "Você teve perda recente do olfato ou paladar?"
+						halign: "center"
+					FloatLayout:
+						MDFillRoundFlatIconButton:
+							text: 'Sim'
+							icon: 'check'
+							md_bg_color: 0,1,0,0.5
+							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+						MDFillRoundFlatIconButton:
+							text: 'Não'
+							icon: 'close'
+							md_bg_color: 1,0,0,1
+							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+							on_release: root.current = 'WindowQuiz'
+				MDLabel:
+					text: " "
+	MDToolbar:
+		id: toolbar
+		pos_hint: {"top": 1}
+		elevation: 10
+		title: "MDNavigationDrawer"
+
