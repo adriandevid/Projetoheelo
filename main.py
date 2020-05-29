@@ -3,7 +3,7 @@ from kivy.core.window import Window
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
-from Controllers import WindowOfQuiz, WindowOfLogin, WindowOfCadastro
+from Controller import WindowOfQuiz, WindowOfLogin, WindowOfCadastro
 
 Window.size = (360, 640)
 
