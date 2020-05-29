@@ -1,14 +1,18 @@
+from __future__ import annotations
+from abc import ABC, abstractmethod
 
-class DbFactury():
+class DbFactory(ABC):
     #factory Method
+    @abstractmethod
     def CreateConnector(ConnectionString): #DbConnector
         pass
     
-    def DataBase(OptionDbName):
-        from SqliteFactury import SqliteFatcury
+    #generator of object
+    def DataBase(OptionDbName) -> DbFactory:
+        from SqliteFactory import SqliteFactory
         try:
             if OptionDbName == 'SQLite':
-                return  SqliteFatcury()
+                return  SqliteFactory()
             elif OptionDbName  == 'MYSql':
                 print("criou banco sqlserver!!")
             else:

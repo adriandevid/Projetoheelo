@@ -1,5 +1,7 @@
-from DbFactury import DbFactury
+from DbFactory import DbFactory
 from SqliteConnector import SqliteConnector
-class SqliteFatcury(DbFactury):
+
+class SqliteFactory(DbFactory):
+    #Concrete Factory
     def CreateConnector(self, ConnectionString): 
         return SqliteConnector(ConnectionString)

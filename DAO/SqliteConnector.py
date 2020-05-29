@@ -1,6 +1,7 @@
 from DbConnector import DbConector
 import sqlite3
 
+#product concret
 class SqliteConnector(DbConector):
     def __init__(self, ConnectionString):
         super().__init__(ConnectionString)
