@@ -3,10 +3,9 @@ from __future__ import annotations
 class ExecuteDb:
     def Execute() -> str:
         import DbFactory
-        sqlite = DbFactory.DbFactory.DataBase('SQLite').CreateConnector('ola.db').Connect();
-        cursor = sqlite.cursor()
+        sqlite = DbFactory.DbFactory.DataBase('MYSql').CreateConnector('ola.db').Connect();
 
-        return "banco conectado"
+        return sqlite
 
         
 if __name__ == '__main__':

@@ -10,13 +10,12 @@ class DbFactory(ABC):
     #generator of object
     def DataBase(OptionDbName) -> DbFactory:
         from SqliteFactory import SqliteFactory
+        from MySQLdbFactory import MySQLdbFactory
         try:
             if OptionDbName == 'SQLite':
                 return  SqliteFactory()
             elif OptionDbName  == 'MYSql':
-                print("criou banco sqlserver!!")
-            else:
-                print("false")
+                return MySQLdbFactory()
         except:
             print("Error!! O tipo de banco não consta nas opções fornecidas")
             
