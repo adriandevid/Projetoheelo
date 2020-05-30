@@ -37,7 +37,7 @@ ScreenManager:
                         icon: "power-standby"
                         md_bg_color: 1,1,1,1
                         pos_hint: {'center_x': 0.5, 'center_y': 0.3}
-                        on_release: root.current = 'Window1'
+                        on_release: root.current = 'WindowQuiz'
     Screen:
         name: "Window1"
         ScrollView:
@@ -275,6 +275,7 @@ ScreenManager:
                 size: root.width, root.height + 900
                 pos_hint: {'center_x': 0.5, 'center_y': .5}
             	MDCard:
+                    id: "Question0"
                     orientation: 'vertical'
                     size_hint: .9, .7
                     size: 300, 500
@@ -298,14 +299,15 @@ ScreenManager:
                             icon: 'check'
 							md_bg_color: 0,1,0,0.5
                             pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-                        	on_release: root.current = 'WindowQuiz'
+                        	on_release: root.RespostQuizInBD('Sim')
                     	MDFillRoundFlatIconButton:
                             text: 'Não'
                             icon: 'close'
                             md_bg_color: 1,0,0,1
                             pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-                            on_release: root.current = 'WindowQuiz'
+                            on_release: root.RespostQuizInBD('Sim')
 				MDCard:
+                    id: "Question1"
                 	orientation: 'vertical'
                     size_hint: .9, .7
                     size: 300, 500
@@ -329,14 +331,15 @@ ScreenManager:
                             icon: 'check'
                             md_bg_color: 0,1,0,0.5
                             pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-                            on_release: root.current = 'WindowQuiz'
+                            on_release: print("ola")
                         MDFillRoundFlatIconButton:
                             text: 'Não'
                             icon: 'close'
                             md_bg_color: 1,0,0,1
                             pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-                            on_release: root.current = 'WindowQuiz'
+                            on_release: print("ola")
                 MDCard:
+                    id: "Question2"
                     orientation: 'vertical'
                     size_hint: .9, .7
                     size: 300, 300
@@ -360,14 +363,15 @@ ScreenManager:
                             icon: 'check'
                             md_bg_color: 0,1,0,0.5
             	        	pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-                            on_release: root.current = 'WindowQuiz'
+                            on_release: print("ola")
                         MDFillRoundFlatIconButton:
                             text: 'Não'
                             icon: 'close'
                             md_bg_color: 1,0,0,1
                             pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-                            on_release: root.current = 'WindowQuiz'
+                            on_release: print("ola")
 				MDCard:
+                    id: "Question3"
                     orientation: 'vertical'
                     size_hint: .9, .7
 					size: 300, 300
@@ -391,14 +395,15 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
                 MDCard:
+                    id: "Question4"
 					orientation: 'vertical'
 					size_hint: .9, .7
 					size: 300, 300
@@ -422,14 +427,15 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 				MDCard:
+                    id: "Question5"
 					orientation: 'vertical'
 					size_hint: .9, .7
 					size: 300, 300
@@ -453,14 +459,15 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 				MDCard:
+                    id: "Question6"
 					orientation: 'vertical'
 					size_hint: .9, .7
 					size: 300, 300
@@ -484,14 +491,15 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 				MDCard:
+                    id: "Question7"
 					orientation: 'vertical'
 					size_hint: .9, .7
 					size: 300, 300
@@ -515,14 +523,15 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 				MDCard:
+                    id: "Question8"
 					orientation: 'vertical'
 					size_hint: .9, .7
 					size: 300, 300
@@ -546,13 +555,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.current = 'WindowQuiz'
+							on_release: print("ola")
 				MDLabel:
 					text: " "
 	MDToolbar:
