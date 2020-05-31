@@ -268,6 +268,7 @@ ScreenManager:
         size: root.width, root.height + 500
         ScrollView:
             BoxLayout:
+                id: "BoxQuiz"
             	orientation: "vertical"
                 spacing: 7
                 padding: "10dp"
@@ -299,13 +300,13 @@ ScreenManager:
                             icon: 'check'
 							md_bg_color: 0,1,0,0.5
                             pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-                        	on_release: root.RespostQuizInBD('Sim')
+                        	on_release: root.RespostQuizInBD('Question0', 'Sim')
                     	MDFillRoundFlatIconButton:
                             text: 'Não'
                             icon: 'close'
                             md_bg_color: 1,0,0,1
                             pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-                            on_release: root.RespostQuizInBD('Sim')
+                            on_release: root.RespostQuizInBD('Question0', 'Não')
 				MDCard:
                     id: "Question1"
                 	orientation: 'vertical'
@@ -331,13 +332,13 @@ ScreenManager:
                             icon: 'check'
                             md_bg_color: 0,1,0,0.5
                             pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-                            on_release: print("ola")
+                            on_release: root.RespostQuizInBD('Question1', 'Sim')
                         MDFillRoundFlatIconButton:
                             text: 'Não'
                             icon: 'close'
                             md_bg_color: 1,0,0,1
                             pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-                            on_release: print("ola")
+                            on_release: root.RespostQuizInBD('Question1', 'Não')
                 MDCard:
                     id: "Question2"
                     orientation: 'vertical'
@@ -363,13 +364,13 @@ ScreenManager:
                             icon: 'check'
                             md_bg_color: 0,1,0,0.5
             	        	pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-                            on_release: print("ola")
+                            on_release: root.RespostQuizInBD('Question2', 'Sim')
                         MDFillRoundFlatIconButton:
                             text: 'Não'
                             icon: 'close'
                             md_bg_color: 1,0,0,1
                             pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-                            on_release: print("ola")
+                            on_release: root.RespostQuizInBD('Question2', 'Não')
 				MDCard:
                     id: "Question3"
                     orientation: 'vertical'
@@ -395,13 +396,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question3', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question3', 'Não')
                 MDCard:
                     id: "Question4"
 					orientation: 'vertical'
@@ -427,13 +428,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question4', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question4', 'Não')
 				MDCard:
                     id: "Question5"
 					orientation: 'vertical'
@@ -459,13 +460,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question5', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question5', 'Não')
 				MDCard:
                     id: "Question6"
 					orientation: 'vertical'
@@ -491,13 +492,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question6', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question6', 'Não')
 				MDCard:
                     id: "Question7"
 					orientation: 'vertical'
@@ -523,13 +524,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question7', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question7', 'Não')
 				MDCard:
                     id: "Question8"
 					orientation: 'vertical'
@@ -555,15 +556,16 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question8', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: print("ola")
+							on_release: root.RespostQuizInBD('Question8', 'Não')
 				MDLabel:
-					text: " "
+                    id: "TextResult"
+					text: ""
 	MDToolbar:
 		id: toolbar
 		pos_hint: {"top": 1}
