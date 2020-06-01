@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class IWindowRepository(ABC):
+class IWindowQuizRepository(ABC):
     @abstractmethod
     def Add(self):
         pass
