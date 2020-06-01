@@ -270,7 +270,7 @@ ScreenManager:
             BoxLayout:
                 id: "BoxQuiz"
             	orientation: "vertical"
-                spacing: 7
+                spacing: 10
                 padding: "10dp"
             	size_hint: None, None
                 size: root.width, root.height + 900
@@ -300,13 +300,13 @@ ScreenManager:
                             icon: 'check'
 							md_bg_color: 0,1,0,0.5
                             pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-                        	on_release: root.RespostQuizInBD('Question0', 'Sim')
+                        	on_release: root.RespostQuiz('Question0', 'Sim')
                     	MDFillRoundFlatIconButton:
                             text: 'Não'
                             icon: 'close'
                             md_bg_color: 1,0,0,1
                             pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-                            on_release: root.RespostQuizInBD('Question0', 'Não')
+                            on_release: root.RespostQuiz('Question0', 'Não')
 				MDCard:
                     id: "Question1"
                 	orientation: 'vertical'
@@ -332,13 +332,13 @@ ScreenManager:
                             icon: 'check'
                             md_bg_color: 0,1,0,0.5
                             pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-                            on_release: root.RespostQuizInBD('Question1', 'Sim')
+                            on_release: root.RespostQuiz('Question1', 'Sim')
                         MDFillRoundFlatIconButton:
                             text: 'Não'
                             icon: 'close'
                             md_bg_color: 1,0,0,1
                             pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-                            on_release: root.RespostQuizInBD('Question1', 'Não')
+                            on_release: root.RespostQuiz('Question1', 'Não')
                 MDCard:
                     id: "Question2"
                     orientation: 'vertical'
@@ -364,13 +364,13 @@ ScreenManager:
                             icon: 'check'
                             md_bg_color: 0,1,0,0.5
             	        	pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-                            on_release: root.RespostQuizInBD('Question2', 'Sim')
+                            on_release: root.RespostQuiz('Question2', 'Sim')
                         MDFillRoundFlatIconButton:
                             text: 'Não'
                             icon: 'close'
                             md_bg_color: 1,0,0,1
                             pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-                            on_release: root.RespostQuizInBD('Question2', 'Não')
+                            on_release: root.RespostQuiz('Question2', 'Não')
 				MDCard:
                     id: "Question3"
                     orientation: 'vertical'
@@ -396,13 +396,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question3', 'Sim')
+							on_release: root.RespostQuiz('Question3', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question3', 'Não')
+							on_release: root.RespostQuiz('Question3', 'Não')
                 MDCard:
                     id: "Question4"
 					orientation: 'vertical'
@@ -428,13 +428,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question4', 'Sim')
+							on_release: root.RespostQuiz('Question4', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question4', 'Não')
+							on_release: root.RespostQuiz('Question4', 'Não')
 				MDCard:
                     id: "Question5"
 					orientation: 'vertical'
@@ -460,13 +460,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question5', 'Sim')
+							on_release: root.RespostQuiz('Question5', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question5', 'Não')
+							on_release: root.RespostQuiz('Question5', 'Não')
 				MDCard:
                     id: "Question6"
 					orientation: 'vertical'
@@ -492,13 +492,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question6', 'Sim')
+							on_release: root.RespostQuiz('Question6', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question6', 'Não')
+							on_release: root.RespostQuiz('Question6', 'Não')
 				MDCard:
                     id: "Question7"
 					orientation: 'vertical'
@@ -524,13 +524,13 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question7', 'Sim')
+							on_release: root.RespostQuiz('Question7', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question7', 'Não')
+							on_release: root.RespostQuiz('Question7', 'Não')
 				MDCard:
                     id: "Question8"
 					orientation: 'vertical'
@@ -556,16 +556,26 @@ ScreenManager:
 							icon: 'check'
 							md_bg_color: 0,1,0,0.5
 							pos_hint: {'center_x': 0.3, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question8', 'Sim')
+							on_release: root.RespostQuiz('Question8', 'Sim')
 						MDFillRoundFlatIconButton:
 							text: 'Não'
 							icon: 'close'
 							md_bg_color: 1,0,0,1
 							pos_hint: {'center_x': 0.7, 'center_y': 0.5}
-							on_release: root.RespostQuizInBD('Question8', 'Não')
-				MDLabel:
+							on_release: root.RespostQuiz('Question8', 'Não')
+				MDFillRoundFlatIconButton:
+                    text: 'Confirmar'
+                    icon: "check"
+                    md_bg_color: app.theme_cls.primary_color
+                    size_hint_y: .2
+                    size_hint_x: .9
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                    on_release: root.SubmitRespostInDb()
+                MDLabel:
                     id: "TextResult"
 					text: ""
+                    color: [0,0,1,1]
+                
 	MDToolbar:
 		id: toolbar
 		pos_hint: {"top": 1}
