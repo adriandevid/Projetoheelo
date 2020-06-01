@@ -23,4 +23,4 @@ class WindowOfQuiz(Screen):
                 self.ListOfResp[NumberPosition] = 2
         print(self.ListOfResp)
     def SubmitRespostInDb(self):
-        print(DbFactory.DataBase('SQLite').CreateConnector('ola.db').Connect())
+        conn = DbFactory.DataBase('SQLite').CreateConnector('ola.db').Connect()
