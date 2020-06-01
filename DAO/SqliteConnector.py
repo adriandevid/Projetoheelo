@@ -1,4 +1,4 @@
-from DbConnector import DbConector
+from DAO.DbConnector import DbConector
 import sqlite3
 
 #product concret

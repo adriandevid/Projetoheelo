@@ -9,8 +9,8 @@ class DbFactory(ABC):
     
     #generator of object
     def DataBase(OptionDbName) -> DbFactory:
-        from SqliteFactory import SqliteFactory
-        from MySQLdbFactory import MySQLdbFactory
+        from DAO.SqliteFactory import SqliteFactory
+        from DAO.MySQLdbFactory import MySQLdbFactory
         try:
             if OptionDbName == 'SQLite':
                 return  SqliteFactory()

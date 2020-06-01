@@ -1,5 +1,5 @@
-from DbFactory import DbFactory
-from SqliteConnector import SqliteConnector
+from DAO.DbFactory import DbFactory
+from DAO.SqliteConnector import SqliteConnector
 
 class SqliteFactory(DbFactory):
     #Concrete Factory

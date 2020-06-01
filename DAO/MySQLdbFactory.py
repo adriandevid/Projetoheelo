@@ -1,8 +1,8 @@
 from __future__ import annotations
-from MySQLdbConnector import MySQLdbConnector
-from DbConnector import DbConector
-from MySQLdbConnector import MySQLdbConnector
-from DbFactory import  DbFactory
+from DAO.MySQLdbConnector import MySQLdbConnector
+from DAO.DbConnector import DbConector
+from DAO.MySQLdbConnector import MySQLdbConnector
+from DAO.DbFactory import  DbFactory
 
 class MySQLdbFactory(DbFactory):
     def CreateConnector(self, ConnectionString) -> DbConector:

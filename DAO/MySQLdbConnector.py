@@ -1,4 +1,4 @@
-from DbConnector import DbConector
+from DAO.DbConnector import DbConector
 
 class MySQLdbConnector(DbConector):
     def __init__(self, ConnectionString):
