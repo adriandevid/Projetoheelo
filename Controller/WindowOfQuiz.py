@@ -3,7 +3,6 @@ from Screens.EfectsKv import Efectskv
 from DAO.DbFactory import DbFactory
 from kivymd.toast import toast
 
-
 class WindowOfQuiz(Screen):
     ListOfResp = [0,0,0,0,0,0,0,0,0]
     contador = 0
