@@ -37,7 +37,7 @@ ScreenManager:
                         icon: "power-standby"
                         md_bg_color: 1,1,1,1
                         pos_hint: {'center_x': 0.5, 'center_y': 0.3}
-                        on_release: root.current = 'WindowQuiz'
+                        on_release: root.current = 'Window1'
     Screen:
         name: "Window1"
         ScrollView:
@@ -123,13 +123,13 @@ ScreenManager:
                             size: 50, 50
                             pos_hint: {'center_x': 0.5, 'center_y': 0.7}
                         MDLabel:
-                            text: "Conectividade"
+                            text: "Cadastro"
                             font_style: "Button"
                             halign: "center"
                             heigth: 50
                             pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                         MDLabel:
-                            text: "É preciso está conectado a uma rede estavel para fazer o login no app, bem como cadastrar e satisfazer as respostas do questionario e submeter."       
+                            text: "O cadastro será somente efetuado se o usuario fizer parte do instituto federal de educação, ciência e tecnologia de Sergipe"       
                             font_style: "Caption"
                             halign: "center"
                             heigth: 50
@@ -178,13 +178,13 @@ ScreenManager:
                             size: 50, 50
                             pos_hint: {'center_x': 0.5, 'center_y': 0.7}
                         MDLabel:
-                            text: "Conectividade"
+                            text: "Quiz"
                             font_style: "Button"
                             halign: "center"
                             heigth: 50
                             pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                         MDLabel:
-                            text: "É preciso está conectado a uma rede estavel para fazer o login no app, bem como cadastrar e satisfazer as respostas do questionario e submeter."       
+                            text: "Na tela de perguntas, caso queira alterar as respostas apenas pressione em uma alternativa diferente da qual você escolheu e será alterado. Depois de respondida todas as perguntas basta pressionar o botão 'Confirmar' "       
                             font_style: "Caption"
                             halign: "center"
                             heigth: 50
@@ -207,7 +207,8 @@ ScreenManager:
         name: "WindowofLoginorRegister"
     WindowOfQuiz:
         name: "WindowQuiz"
-        
+    WindowOfCadastro:
+        name: "WindowOfCadastro"
 <WindowOfLogin>:
     BoxLayout:
         orientation: "vertical"
@@ -260,7 +261,185 @@ ScreenManager:
                 size_hint_x: .9
                 md_bg_color: app.theme_cls.primary_color
                 pos_hint: {'center_x': 0.5, 'center_y': 0.2}
-                on_release: app.root.current = 'WindowQuiz'
+                on_release: app.root.current = 'WindowOfCadastro'
+<WindowOfCadastro>:
+    BoxLayout:
+        orientation: "vertical"
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        size: root.width, root.height + 300
+        pos_hint: {'center_x': 0.5, 'center_y': .5}
+        MDToolbar:
+            id: toolbar
+            pos_hint: {"top": 1}
+            elevation: 10
+            spacing: 10
+            title: "Cadastro"
+            Image:
+                source: 'C:/Users/PC/Documents/ProjetoHeelo/Screens/fotos/inscricao.png'
+        ScrollView:
+            BoxLayout:
+                id: "BoxQuiz"
+            	orientation: "vertical"
+                spacing: 10
+                padding: "20dp"
+            	size_hint: None, None
+                size: root.width - 50, root.height + 400
+                pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "E-mail"
+                    helper_text: ""
+                    max_text_length: 100
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Nome Completo"
+                    helper_text: ""
+                    max_text_length: 100
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Senha"
+                    helper_text: ""
+                    password: True
+                    max_text_length: 45
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Cofirmação de Senha"
+                    helper_text: ""
+                    password: True
+                    max_text_length: 45
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDLabel:
+                    text: "Sexo"
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                    size_hint: None, None
+                    size: 300, 10
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint: None, None
+                    size: 300, 30
+                    MDCheckbox:
+                        size_hint: None, None
+                        size: dp(30), dp(30)
+                        pos_hint: {'center_x': 0.5, 'center_y': .5}
+                    MDLabel:
+                        text: "Homem"
+                        pos_hint: {'center_x': 0.5, 'center_y': .5}
+                    MDCheckbox:
+                        size_hint: None, None
+                        size: dp(30), dp(30)
+                        pos_hint: {'center_x': 0.5, 'center_y': .5}
+                    MDLabel:
+                        text: "Mulher"
+                        pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Data de Nascimento"
+                    helper_text: ""
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Telefone"
+                    helper_text: "+DDI (DDD) XXXXX-XXXX"
+                    helper_text_mode: "on_focus"
+                    max_text_length: 15
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Categoria"
+                    helper_text: "A = 'Aluno', S = 'Servidor', T = 'Terceirizado'"
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    max_text_length: 1
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Perfil"
+                    helper_text: ""
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    max_text_length: 1
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Campus"
+                    helper_text: ""
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Curso"
+                    helper_text: ""
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Turma"
+                    helper_text: ""
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Turno"
+                    helper_text: ""
+                    max_text_length: 1
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Data"
+                    helper_text: ""
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "Ativo"
+                    helper_text: ""
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    max_text_length: 1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDTextField:
+                    hint_text: "CPF"
+                    helper_text: ""
+                    password: True
+                    max_text_length: 11
+                    helper_text_mode: "on_focus"
+                    color_mode: "custom"
+                    fill_color: 0,0,0,1
+                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: None, None
+            size: 50, 50
+            padding: "10dp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            MDRoundFlatButton:
+                text: 'Cadastrar'
+                size_hint: None, None
+                size: 200, 40
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_release: print("Cadastro")
+
 <WindowOfQuiz>:
     BoxLayout:
         orientation: "vertical"
@@ -574,11 +753,9 @@ ScreenManager:
                 MDLabel:
                     id: "TextResult"
 					text: ""
-                    color: [0,0,1,1]
-                
+                    color: [0,0,1,1]          
 	MDToolbar:
 		id: toolbar
 		pos_hint: {"top": 1}
 		elevation: 10
-		title: "MDNavigationDrawer"
-
+    	title: "Quiz de perguntas"
