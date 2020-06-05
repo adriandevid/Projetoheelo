@@ -1,5 +1,4 @@
 from kivy.uix.screenmanager import ScreenManager, Screen
-from Screens.EfectsKv import Efectskv
 from DAO.DbFactory import DbFactory
 from kivymd.toast import toast
 

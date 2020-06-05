@@ -37,7 +37,7 @@ ScreenManager:
                         icon: "power-standby"
                         md_bg_color: 1,1,1,1
                         pos_hint: {'center_x': 0.5, 'center_y': 0.3}
-                        on_release: root.current = 'Window1'
+                        on_release: root.current = 'WindowOfCadastro'
     Screen:
         name: "Window1"
         ScrollView:
@@ -286,22 +286,27 @@ ScreenManager:
                 size: root.width - 50, root.height + 400
                 pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Email
                     hint_text: "E-mail"
                     helper_text: ""
                     max_text_length: 100
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Nome
                     hint_text: "Nome Completo"
                     helper_text: ""
                     max_text_length: 100
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Senha
                     hint_text: "Senha"
                     helper_text: ""
                     password: True
@@ -309,8 +314,10 @@ ScreenManager:
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: ComfirmSenha
                     hint_text: "Cofirmação de Senha"
                     helper_text: ""
                     password: True
@@ -318,6 +325,7 @@ ScreenManager:
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDLabel:
                     text: "Sexo"
@@ -329,96 +337,114 @@ ScreenManager:
                     orientation: "horizontal"
                     size_hint: None, None
                     size: 300, 30
-                    MDCheckbox:
-                        size_hint: None, None
-                        size: dp(30), dp(30)
-                        pos_hint: {'center_x': 0.5, 'center_y': .5}
+                    Check:
+                        id: Homem
                     MDLabel:
                         text: "Homem"
+                        required: True
                         pos_hint: {'center_x': 0.5, 'center_y': .5}
-                    MDCheckbox:
-                        size_hint: None, None
-                        size: dp(30), dp(30)
-                        pos_hint: {'center_x': 0.5, 'center_y': .5}
+                    Check:
+                        id: Mulher
                     MDLabel:
                         text: "Mulher"
                         pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: DtNascimento
                     hint_text: "Data de Nascimento"
-                    helper_text: ""
+                    helper_text: "dia/mês/ano"
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Telefone
                     hint_text: "Telefone"
                     helper_text: "+DDI (DDD) XXXXX-XXXX"
                     helper_text_mode: "on_focus"
                     max_text_length: 15
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Categoria
                     hint_text: "Categoria"
                     helper_text: "A = 'Aluno', S = 'Servidor', T = 'Terceirizado'"
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     max_text_length: 1
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Perfil
                     hint_text: "Perfil"
                     helper_text: ""
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     max_text_length: 1
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Compus
                     hint_text: "Campus"
                     helper_text: ""
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Curso
                     hint_text: "Curso"
                     helper_text: ""
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Turma
                     hint_text: "Turma"
                     helper_text: ""
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Turno
                     hint_text: "Turno"
                     helper_text: ""
                     max_text_length: 1
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Data
                     hint_text: "Data"
-                    helper_text: ""
+                    helper_text: "dia/mês/ano"
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: Ativo
                     hint_text: "Ativo"
                     helper_text: ""
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
                     max_text_length: 1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
+                    id: CPF
                     hint_text: "CPF"
                     helper_text: ""
                     password: True
@@ -426,6 +452,7 @@ ScreenManager:
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     fill_color: 0,0,0,1
+                    required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
         BoxLayout:
             orientation: "vertical"
@@ -438,7 +465,7 @@ ScreenManager:
                 size_hint: None, None
                 size: 200, 40
                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-                on_release: print("Cadastro")
+                on_release: root.VerificationAnswersForm()
 
 <WindowOfQuiz>:
     BoxLayout:
@@ -759,3 +786,8 @@ ScreenManager:
 		pos_hint: {"top": 1}
 		elevation: 10
     	title: "Quiz de perguntas"
+<Check@MDCheckbox>:
+    group: 'group'
+    size_hint: None, None
+    size: dp(30), dp(30)
+    pos_hint: {'center_x': 0.5, 'center_y': .5}
