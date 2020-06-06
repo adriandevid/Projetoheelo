@@ -283,7 +283,7 @@ ScreenManager:
                 spacing: 10
                 padding: "20dp"
             	size_hint: None, None
-                size: root.width - 50, root.height + 400
+                size: root.width - 25, root.height + 600
                 pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
                     id: Email
@@ -342,11 +342,13 @@ ScreenManager:
                     MDLabel:
                         text: "Homem"
                         required: True
+                        font_style: 'Overline'
                         pos_hint: {'center_x': 0.5, 'center_y': .5}
                     Check:
                         id: Mulher
                     MDLabel:
                         text: "Mulher"
+                        font_style: 'Overline'
                         pos_hint: {'center_x': 0.5, 'center_y': .5}
                 MDTextField:
                     id: DtNascimento
@@ -367,16 +369,74 @@ ScreenManager:
                     fill_color: 0,0,0,1
                     required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
-                MDTextField:
-                    id: Categoria
-                    hint_text: "Categoria"
-                    helper_text: "A = 'Aluno', S = 'Servidor', T = 'Terceirizado'"
-                    helper_text_mode: "on_focus"
-                    color_mode: "custom"
-                    max_text_length: 1
-                    fill_color: 0,0,0,1
-                    required: True
-                    pos_hint: {'center_x': 0.5, 'center_y': .5}
+                MDLabel:
+                    text: "Categoria"
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                    size_hint: None, None
+                    size: 300, 10
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint: None, None
+                    size: 300, 30
+                    CheckCategoria:
+                        id: servidor
+                        on_active: root.ValidateCategoria("S")
+                    MDLabel:
+                        text: "Servidor"
+                        required: True
+                        font_style: 'Overline'
+                        pos_hint: {'center_x': 0.5, 'center_y': .5}
+                    CheckCategoria:
+                        id: aluno
+                        on_active: root.ValidateCategoria("T")
+                    MDLabel:
+                        text: "Aluno"
+                        font_style: 'Overline'
+                        pos_hint: {'center_x': 0.5, 'center_y': .5}
+                    CheckCategoria:
+                        id: tercerizado
+                        on_active: root.ValidateCategoria("A")
+                    MDLabel:
+                        text: "Tercerizado"
+                        font_style: 'Overline'
+                        pos_hint: {'center_x': 0.5, 'center_y': .5}
+                BoxLayout:
+                    orientation: "vertical"
+                    spacing: 0
+                    MDLabel:
+                        text: "Campus"
+                        pos_hint: {"top": 1}
+                        theme_text_color: "Custom"
+                        text_color: 0, 0, 1, 1
+                    BoxLayout:
+                        orientation: "horizontal"
+                        CheckCampus:
+                            id: ItabaianaCamp
+                            on_active: root.ValidateCampus("Itabaiana")
+                        MDLabel:
+                            text: "Campus Itabaiana"
+                            font_style: 'Overline'
+                        CheckCampus:
+                            id: instanciaCamp
+                            on_active: root.ValidateCampus("Instancia")
+                        MDLabel:
+                            text: "Campus Instancia"
+                            font_style: 'Overline'
+                    BoxLayout:
+                        orientation: "horizontal"
+                        CheckCampus:
+                            id: AracajuCamp
+                            on_active: root.ValidateCampus("Aracaju")
+                        MDLabel:
+                            text: "Campus Aracaju"
+                            font_style: 'Overline'
+                        CheckCampus:
+                            id: GloriaCamp
+                            on_active: root.ValidateCampus("Gloria")
+                        MDLabel:
+                            text: "Campus Gloria"
+                            font_style: 'Overline'
                 MDTextField:
                     id: Perfil
                     hint_text: "Perfil"
@@ -384,15 +444,6 @@ ScreenManager:
                     helper_text_mode: "on_focus"
                     color_mode: "custom"
                     max_text_length: 1
-                    fill_color: 0,0,0,1
-                    required: True
-                    pos_hint: {'center_x': 0.5, 'center_y': .5}
-                MDTextField:
-                    id: Compus
-                    hint_text: "Campus"
-                    helper_text: ""
-                    helper_text_mode: "on_focus"
-                    color_mode: "custom"
                     fill_color: 0,0,0,1
                     required: True
                     pos_hint: {'center_x': 0.5, 'center_y': .5}
@@ -787,7 +838,17 @@ ScreenManager:
 		elevation: 10
     	title: "Quiz de perguntas"
 <Check@MDCheckbox>:
-    group: 'group'
+    group: 'group1'
+    size_hint: None, None
+    size: dp(30), dp(30)
+    pos_hint: {'center_x': 0.5, 'center_y': .5}
+<CheckCategoria@MDCheckbox>:
+    group: 'group2'
+    size_hint: None, None
+    size: dp(30), dp(30)
+    pos_hint: {'center_x': 0.5, 'center_y': .5}
+<CheckCampus@MDCheckbox>:
+    group: 'group3'
     size_hint: None, None
     size: dp(30), dp(30)
     pos_hint: {'center_x': 0.5, 'center_y': .5}
