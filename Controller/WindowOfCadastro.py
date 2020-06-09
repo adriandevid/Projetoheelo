@@ -12,23 +12,26 @@ class WindowOfCadastro(Screen):
     def ValidateData(self, Data):
         try:
             dia, mes, ano = map(int, Data.split('/'))
-            if mes < 1 or mes > 12 or ano <= 0 or ano >= 2020:
-                toast("Erro de data insira uma data valida!")
-            else:
-                if mes in (1, 3, 5, 7, 8, 10, 12):
-                    ultimo_dia = 31
-                elif mes == 2:
-                    if (ano % 4 == 0) and (ano % 100 != 0 or ano % 400 == 0):
-                        ultimo_dia = 29
-                    else:
-                        ultimo_dia = 28
+            if ano > 1900 and ano < 2020:
+                if mes < 1 or mes > 12 or ano <= 0 or ano >= 2020:
+                    toast("Erro de data insira uma data valida!")
                 else:
-                    ultimo_dia = 30
-                    if dia < 1 or dia > ultimo_dia:
-                        toast("Data invalida!!")
+                    if mes in (1, 3, 5, 7, 8, 10, 12):
+                        ultimo_dia = 31
+                    elif mes == 2:
+                        if (ano % 4 == 0) and (ano % 100 != 0 or ano % 400 == 0):
+                            ultimo_dia = 29
+                        else:
+                            ultimo_dia = 28
                     else:
-                        self.dictvalues['DatadeNascimento'] = Data
-                        return True
+                        ultimo_dia = 30
+                        if dia < 1 or dia > ultimo_dia:
+                            toast("Data invalida!!")
+                        else:
+                            self.dictvalues['DatadeNascimento'] = Data
+                            return True
+            else:
+                toast("O ano inserido n é valido")
         except ValueError:
             toast("O dado inserido não é valido")
     def ValidateEmail(self, Email):
@@ -74,9 +77,9 @@ class WindowOfCadastro(Screen):
                 self.ids['Curso'].error = True
                 toast("Error")
                 break
-    def ValidateCPF(self):
-        if len(self.ids['CPF'].text) == 11:
-            self.dictvalues['CPF'] = self.ids['CPF'].text
+    def ValidateCPF(self, cpf):
+        if len(cpf) == 11:
+            self.dictvalues['CPF'] = cpf
         else:
             toast("Informe um cpf Valido")
     def VerificationAnswersForm(self):
@@ -87,5 +90,3 @@ class WindowOfCadastro(Screen):
         self.dictvalues['Nome'] = self.ids['Nome'].text
         self.ValidateCurso(self.ids['Curso'].text.lower())
         self.ValidateCPF(self.ids['CPF'].text)
-        self.ConnectionFunc.close()
-        
