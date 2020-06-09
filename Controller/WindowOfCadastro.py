@@ -1,11 +1,14 @@
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.uix.picker import MDDatePicker
 from kivymd.toast import toast
+from DAO.DbFactory import DbFactory
 
 class WindowOfCadastro(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.dictvalues = {}
+        self.ConnectionFunc = DbFactory.DataBase('MYSql').CreateConnector("localhost,root,,mydb").Connect()
+        self.cursor = self.ConnectionFunc.cursor()
     def ValidateData(self, Data):
         try:
             dia, mes, ano = map(int, Data.split('/'))
@@ -56,12 +59,33 @@ class WindowOfCadastro(Screen):
             print("error")
     def ValidateCampus(self, Campus):
         self.dictvalues['Campus'] = Campus
+        self.cursor.execute("SELECT * FROM tbcampus")
+        for i in self.cursor:
+            print(i)
+    def ValidateSexo(self, sexo):
+        self.dictvalues['Sexo'] = sexo
+    def ValidateCurso(self, Val, listVals = {1: "Ciência da Computação", 2: "Tecnico em manutenção de informatica"}):
+        for i in range(len(listVals)):
+            if Val == str(listVals[i+1]).lower():
+                print(Val == str(listVals[i+1]))
+                self.dictvalues['Cursos'] = Val
+                break
+            else:
+                self.ids['Curso'].error = True
+                toast("Error")
+                break
+    def ValidateCPF(self):
+        if len(self.ids['CPF'].text) == 11:
+            self.dictvalues['CPF'] = self.ids['CPF'].text
+        else:
+            toast("Informe um cpf Valido")
     def VerificationAnswersForm(self):
         self.ValidateEmail(self.ids['Email'].text)
         self.ValidateSenha(self.ids['Senha'].text, self.ids['ComfirmSenha'].text)
-        self.ValidateTelefone(self.ids["Telefone"].text)
+        self.ValidateTelefone(self.ids['Telefone'].text)
         self.ValidateData(self.ids['DtNascimento'].text)
-        print(self.dictvalues)
-        
-        
+        self.dictvalues['Nome'] = self.ids['Nome'].text
+        self.ValidateCurso(self.ids['Curso'].text.lower())
+        self.ValidateCPF(self.ids['CPF'].text)
+        self.ConnectionFunc.close()
         
